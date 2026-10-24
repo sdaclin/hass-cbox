@@ -4,6 +4,8 @@
 [![Validate](https://github.com/sdaclin/hass-cbox/actions/workflows/validate.yaml/badge.svg)](https://github.com/sdaclin/hass-cbox/actions/workflows/validate.yaml)
 [![hassfest](https://github.com/sdaclin/hass-cbox/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/sdaclin/hass-cbox/actions/workflows/hassfest.yaml)
 
+<img src="doc/images/climate.png" alt="cBox climate and power level in Home Assistant" width="260" align="right"/>
+
 Control a pellet stove equipped with a [Fumis Alpha](https://fumis.si/en/about-fumis/fumis-combustion-controllers/fumis-alpha)
 controller and its **Connection Box** (a.k.a. `connBox` / `cBox`) from Home Assistant, locally, without any cloud.
 
