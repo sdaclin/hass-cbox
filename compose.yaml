@@ -1,0 +1,22 @@
+# Local development: Home Assistant with this integration mounted, plus a fake cBox.
+# Add the integration in the UI with host "simulator".
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      - ./config:/config
+      - ./custom_components/cbox:/config/custom_components/cbox:ro
+    ports:
+      - "8123:8123"
+    depends_on:
+      - simulator
+
+  simulator:
+    image: python:3.14-slim
+    working_dir: /cbox
+    volumes:
+      - ../cbox:/cbox:ro
+      - ./dev/simulator.py:/dev-simulator.py:ro
+    environment:
+      PYTHONPATH: /cbox/src:/cbox
+    command: sh -c "pip install --quiet aiohttp && python /dev-simulator.py"

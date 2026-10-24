@@ -1,0 +1,30 @@
+[project]
+name = "hass-cbox"
+version = "0.1.0"
+description = "Home Assistant integration for pellet stoves equipped with a Fumis Alpha Connection Box (cBox)"
+requires-python = ">=3.14.2"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "connbox==0.1.1",
+    "pytest-homeassistant-custom-component==0.13.373",
+]
+lint = [
+    "ruff>=0.17.2",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

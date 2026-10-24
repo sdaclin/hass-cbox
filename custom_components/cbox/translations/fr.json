@@ -1,0 +1,109 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion à votre cBox",
+        "description": "Saisissez le nom d'hôte ou l'adresse IP de la Connection Box sur votre réseau.",
+        "data": {
+          "host": "Hôte"
+        },
+        "data_description": {
+          "host": "Nom d'hôte ou adresse IP de la cBox, par ex. 192.168.1.20"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigurer la cBox",
+        "description": "Modifiez le nom d'hôte ou l'adresse IP de la Connection Box.",
+        "data": {
+          "host": "Hôte"
+        },
+        "data_description": {
+          "host": "Nom d'hôte ou adresse IP de la cBox, par ex. 192.168.1.20"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter à la cBox",
+      "unknown": "Erreur inattendue"
+    },
+    "abort": {
+      "already_configured": "Cette cBox est déjà configurée",
+      "reconfigure_successful": "Reconfiguration réussie",
+      "unique_id_mismatch": "Cet hôte correspond à une autre cBox"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "alarm": {
+        "name": "Alarme"
+      }
+    },
+    "climate": {
+      "stove": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "off": "Arrêt",
+              "high": "Maximum",
+              "auto": "Auto",
+              "1": "Vitesse 1",
+              "2": "Vitesse 2",
+              "3": "Vitesse 3",
+              "4": "Vitesse 4",
+              "5": "Vitesse 5"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "power": {
+        "name": "Puissance"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "État",
+        "state": {
+          "unknown": "Inconnu",
+          "off": "Éteint",
+          "off_timer": "Éteint (programmation)",
+          "testfire": "Test d'allumage",
+          "heatup": "Préchauffage",
+          "fuelign": "Allumage",
+          "igntest": "Vérification de l'allumage",
+          "burning": "En combustion",
+          "coolfluid": "Refroidissement du fluide",
+          "firestop": "Extinction",
+          "cleanfire": "Nettoyage du foyer",
+          "cool": "Refroidissement",
+          "chimney_alarm": "Alarme cheminée",
+          "grate_error": "Erreur de grille",
+          "ntc2_alarm": "Alarme sonde NTC2",
+          "ntc3_alarm": "Alarme sonde NTC3",
+          "door_alarm": "Alarme porte",
+          "press_alarm": "Alarme pression",
+          "ntc1_alarm": "Alarme sonde NTC1",
+          "tc1_alarm": "Alarme sonde TC1",
+          "gas_alarm": "Alarme gaz",
+          "nopellet_alar": "Alarme manque de granulés"
+        }
+      },
+      "pellet_consumption": {
+        "name": "Consommation de granulés"
+      },
+      "temperature_2": {
+        "name": "Température sonde T2"
+      },
+      "temperature_3": {
+        "name": "Température sonde T3"
+      },
+      "temperature_4": {
+        "name": "Température sonde T4"
+      },
+      "temperature_5": {
+        "name": "Température sonde T5"
+      }
+    }
+  }
+}

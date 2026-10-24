@@ -1,0 +1,109 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to your cBox",
+        "description": "Enter the host name or IP address of the Connection Box on your network.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "Host name or IP address of the cBox, e.g. 192.168.1.20"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure cBox",
+        "description": "Update the host name or IP address of the Connection Box.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "Host name or IP address of the cBox, e.g. 192.168.1.20"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the cBox",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This cBox is already configured",
+      "reconfigure_successful": "Reconfiguration was successful",
+      "unique_id_mismatch": "This host is a different cBox"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "alarm": {
+        "name": "Alarm"
+      }
+    },
+    "climate": {
+      "stove": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "off": "Off",
+              "high": "High",
+              "auto": "Auto",
+              "1": "Speed 1",
+              "2": "Speed 2",
+              "3": "Speed 3",
+              "4": "Speed 4",
+              "5": "Speed 5"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "power": {
+        "name": "Power level"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "unknown": "Unknown",
+          "off": "Off",
+          "off_timer": "Off (timer)",
+          "testfire": "Ignition test",
+          "heatup": "Heating up",
+          "fuelign": "Fuel ignition",
+          "igntest": "Ignition check",
+          "burning": "Burning",
+          "coolfluid": "Cooling fluid",
+          "firestop": "Fire stop",
+          "cleanfire": "Cleaning fire",
+          "cool": "Cooling",
+          "chimney_alarm": "Chimney alarm",
+          "grate_error": "Grate error",
+          "ntc2_alarm": "Probe NTC2 alarm",
+          "ntc3_alarm": "Probe NTC3 alarm",
+          "door_alarm": "Door alarm",
+          "press_alarm": "Pressure alarm",
+          "ntc1_alarm": "Probe NTC1 alarm",
+          "tc1_alarm": "Probe TC1 alarm",
+          "gas_alarm": "Gas alarm",
+          "nopellet_alar": "No pellet alarm"
+        }
+      },
+      "pellet_consumption": {
+        "name": "Pellet consumption"
+      },
+      "temperature_2": {
+        "name": "Probe T2 temperature"
+      },
+      "temperature_3": {
+        "name": "Probe T3 temperature"
+      },
+      "temperature_4": {
+        "name": "Probe T4 temperature"
+      },
+      "temperature_5": {
+        "name": "Probe T5 temperature"
+      }
+    }
+  }
+}
