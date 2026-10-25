@@ -21,12 +21,11 @@ MAX_POWER = 5
 
 STATUSES_OFF = {StoveStatus.OFF, StoveStatus.OFF_TIMER}
 STATUSES_STOPPING = {StoveStatus.FIRESTOP, StoveStatus.COOL}
-STATUSES_HEATING = {
+STATUSES_STARTING = {
     StoveStatus.TESTFIRE,
     StoveStatus.HEATUP,
     StoveStatus.FUELIGN,
     StoveStatus.IGNTEST,
-    StoveStatus.BURNING,
 }
 
 FAN_MODES: dict[str, FanStatus] = {

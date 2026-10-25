@@ -36,7 +36,7 @@ Connection Box. Giving the cBox a fixed IP address on your router is recommended
 
 | Entity | Description |
 |---|---|
-| Climate | Turn the stove on/off (`heat` / `off`), set the target temperature (12–50 °C), choose the room fan speed (`off`, `1`–`5`, `high`, `auto`). Shows the room temperature and whether the stove is heating. |
+| Climate | Turn the stove on/off (`heat` / `off`), set the target temperature (12–50 °C), choose the room fan speed (`off`, `1`–`5`, `high`, `auto`). Shows the room temperature and whether the stove is starting up (`preheating`) or burning (`heating`). |
 | Power level | Burn power, from 1 to 5. |
 | Status | Detailed stove state (heating up, burning, cooling, alarms…). |
 | Pellet consumption | Total pellets burnt in kg, usable in the Energy dashboard. |

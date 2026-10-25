@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from connbox import StoveStatus
 from homeassistant.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
@@ -18,8 +19,8 @@ from .const import (
     FAN_MODES,
     MAX_TEMPERATURE,
     MIN_TEMPERATURE,
-    STATUSES_HEATING,
     STATUSES_OFF,
+    STATUSES_STARTING,
     STATUSES_STOPPING,
 )
 from .coordinator import CboxConfigEntry, CboxCoordinator
@@ -71,7 +72,9 @@ class CboxClimate(CboxEntity, ClimateEntity):
         info = self.coordinator.data
         if info.status in STATUSES_OFF or info.is_alarm:
             return HVACAction.OFF
-        if info.status in STATUSES_HEATING:
+        if info.status in STATUSES_STARTING:
+            return HVACAction.PREHEATING
+        if info.status is StoveStatus.BURNING:
             return HVACAction.HEATING
         return HVACAction.IDLE
 
