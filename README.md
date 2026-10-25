@@ -47,7 +47,10 @@ The stove is polled every 30 seconds.
 
 ## Known limitations
 
-- While the stove shuts down (fire stop, cleaning, cooling), it is still reported as `heat` with an `idle` action.
+- While the stove shuts down (fire stop, cooling), it is reported as `off` with an `idle` action. Fire cleaning can
+  also happen while burning, so it is reported as `heat` with an `idle` action.
+- The cBox sometimes doesn't answer a request: a failed poll is retried once, and the last known state is kept
+  until 3 polls in a row fail (about 90 seconds).
 - Some stoves (e.g. Jotul PF 1033) don't allow turning the room fan off: `off` falls back to speed 1.
 
 ## Development

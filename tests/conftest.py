@@ -21,6 +21,13 @@ def auto_enable_custom_integrations(enable_custom_integrations: None) -> None:
     """Enable custom integrations in all tests."""
 
 
+@pytest.fixture(autouse=True)
+def no_retry_delay() -> Generator[None]:
+    """Don't wait between poll retries."""
+    with patch("custom_components.cbox.coordinator.RETRY_DELAY", 0):
+        yield
+
+
 def build_info(**overrides) -> CboxInfo:
     info = CboxInfo(
         timestamp=datetime(2026, 10, 24, 10, 0),

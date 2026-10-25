@@ -48,7 +48,9 @@ async def test_climate_state(hass: HomeAssistant, init_integration: MockConfigEn
     [
         (StoveStatus.OFF, HVACMode.OFF, HVACAction.OFF),
         (StoveStatus.HEATUP, HVACMode.HEAT, HVACAction.HEATING),
-        (StoveStatus.COOL, HVACMode.HEAT, HVACAction.IDLE),
+        (StoveStatus.FIRESTOP, HVACMode.OFF, HVACAction.IDLE),
+        (StoveStatus.COOL, HVACMode.OFF, HVACAction.IDLE),
+        (StoveStatus.CLEANFIRE, HVACMode.HEAT, HVACAction.IDLE),
         (StoveStatus.UNKNOWN, HVACMode.HEAT, HVACAction.IDLE),
         (StoveStatus.NOPELLET_ALAR, HVACMode.OFF, HVACAction.OFF),
     ],

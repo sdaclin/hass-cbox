@@ -14,7 +14,14 @@ from homeassistant.const import ATTR_TEMPERATURE, PRECISION_TENTHS, PRECISION_WH
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from .const import FAN_MODES, MAX_TEMPERATURE, MIN_TEMPERATURE, STATUSES_HEATING, STATUSES_OFF
+from .const import (
+    FAN_MODES,
+    MAX_TEMPERATURE,
+    MIN_TEMPERATURE,
+    STATUSES_HEATING,
+    STATUSES_OFF,
+    STATUSES_STOPPING,
+)
 from .coordinator import CboxConfigEntry, CboxCoordinator
 from .entity import CboxEntity
 
@@ -55,7 +62,7 @@ class CboxClimate(CboxEntity, ClimateEntity):
     @property
     def hvac_mode(self) -> HVACMode:
         info = self.coordinator.data
-        if info.status in STATUSES_OFF or info.is_alarm:
+        if info.status in STATUSES_OFF or info.status in STATUSES_STOPPING or info.is_alarm:
             return HVACMode.OFF
         return HVACMode.HEAT
 

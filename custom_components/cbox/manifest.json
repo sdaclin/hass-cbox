@@ -9,5 +9,5 @@
   "issue_tracker": "https://github.com/sdaclin/hass-cbox/issues",
   "loggers": ["connbox"],
   "requirements": ["connbox==0.1.1"],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
