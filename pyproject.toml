@@ -8,7 +8,7 @@ dependencies = []
 [dependency-groups]
 dev = [
     "connbox==0.1.1",
-    "pytest-homeassistant-custom-component==0.13.373",
+    "pytest-homeassistant-custom-component==0.13.375",
 ]
 lint = [
     "ruff>=0.17.2",
